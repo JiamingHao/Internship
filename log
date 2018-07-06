@@ -1,0 +1,1548 @@
+Successfully find ODGenerator.py in the current directory.
+Processing command line argument over
+    Reference latitude:  0.0   Reference longitude:  0.0
+    File path provided:  ./POI/Qinghai0.csv
+    Debug mode off
+Folder  ./ODPairs/  already exists
+Time used to process and store: 1
+Reading and store input file finished
+Total number of lines:  50007
+Debug mode off, thus no debug_output produced
+Sort by distance
+Sort ends
+time used: 2
+Debug mode off, thus no debug_output produced
+Sort by zip code
+Sort ends
+time used: 4
+Debug mode off, thus no debug_output produced
+Processing command line argument over
+    Reference latitude:  0.0   Reference longitude:  0.0
+    File path provided:  ./POI/Qinghai1.csv
+    Debug mode off
+Folder  ./ODPairs/  already exists
+Time used to process and store: 0
+Reading and store input file finished
+Total number of lines:  6171
+Debug mode off, thus no debug_output produced
+Sort by distance
+Sort ends
+time used: 0
+Debug mode off, thus no debug_output produced
+Sort by zip code
+Sort ends
+time used: 0
+Debug mode off, thus no debug_output produced
+Processing command line argument over
+    Reference latitude:  0.0   Reference longitude:  0.0
+    File path provided:  ./POI/Shaanxi0.csv
+    Debug mode off
+Folder  ./ODPairs/  already exists
+Time used to process and store: 1
+Reading and store input file finished
+Total number of lines:  50000
+Debug mode off, thus no debug_output produced
+Sort by distance
+Sort ends
+time used: 2
+Debug mode off, thus no debug_output produced
+Sort by zip code
+Sort ends
+time used: 4
+Debug mode off, thus no debug_output produced
+Processing command line argument over
+    Reference latitude:  0.0   Reference longitude:  0.0
+    File path provided:  ./POI/Shaanxi1.csv
+    Debug mode off
+Folder  ./ODPairs/  already exists
+Time used to process and store: 1
+Reading and store input file finished
+Total number of lines:  50000
+Debug mode off, thus no debug_output produced
+Sort by distance
+Sort ends
+time used: 2
+Debug mode off, thus no debug_output produced
+Sort by zip code
+Sort ends
+time used: 4
+Debug mode off, thus no debug_output produced
+Processing command line argument over
+    Reference latitude:  0.0   Reference longitude:  0.0
+    File path provided:  ./POI/Shaanxi2.csv
+    Debug mode off
+Folder  ./ODPairs/  already exists
+Time used to process and store: 1
+Reading and store input file finished
+Total number of lines:  50000
+Debug mode off, thus no debug_output produced
+Sort by distance
+Sort ends
+time used: 2
+Debug mode off, thus no debug_output produced
+Sort by zip code
+Sort ends
+time used: 4
+Debug mode off, thus no debug_output produced
+Processing command line argument over
+    Reference latitude:  0.0   Reference longitude:  0.0
+    File path provided:  ./POI/Shaanxi3.csv
+    Debug mode off
+Folder  ./ODPairs/  already exists
+Time used to process and store: 1
+Reading and store input file finished
+Total number of lines:  50000
+Debug mode off, thus no debug_output produced
+Sort by distance
+Sort ends
+time used: 2
+Debug mode off, thus no debug_output produced
+Sort by zip code
+Sort ends
+time used: 4
+Debug mode off, thus no debug_output produced
+Processing command line argument over
+    Reference latitude:  0.0   Reference longitude:  0.0
+    File path provided:  ./POI/Shaanxi4.csv
+    Debug mode off
+Folder  ./ODPairs/  already exists
+Time used to process and store: 1
+Reading and store input file finished
+Total number of lines:  50000
+Debug mode off, thus no debug_output produced
+Sort by distance
+Sort ends
+time used: 2
+Debug mode off, thus no debug_output produced
+Sort by zip code
+Sort ends
+time used: 4
+Debug mode off, thus no debug_output produced
+Processing command line argument over
+    Reference latitude:  0.0   Reference longitude:  0.0
+    File path provided:  ./POI/Shaanxi5.csv
+    Debug mode off
+Folder  ./ODPairs/  already exists
+Time used to process and store: 1
+Reading and store input file finished
+Total number of lines:  47442
+Debug mode off, thus no debug_output produced
+Sort by distance
+Sort ends
+time used: 2
+Debug mode off, thus no debug_output produced
+Sort by zip code
+Sort ends
+time used: 4
+Debug mode off, thus no debug_output produced
+Processing command line argument over
+    Reference latitude:  0.0   Reference longitude:  0.0
+    File path provided:  ./POI/Shandong0.csv
+    Debug mode off
+Folder  ./ODPairs/  already exists
+Time used to process and store: 1
+Reading and store input file finished
+Total number of lines:  50000
+Debug mode off, thus no debug_output produced
+Sort by distance
+Sort ends
+time used: 2
+Debug mode off, thus no debug_output produced
+Sort by zip code
+Sort ends
+time used: 4
+Debug mode off, thus no debug_output produced
+Processing command line argument over
+    Reference latitude:  0.0   Reference longitude:  0.0
+    File path provided:  ./POI/Shandong1.csv
+    Debug mode off
+Folder  ./ODPairs/  already exists
+Time used to process and store: 1
+Reading and store input file finished
+Total number of lines:  50000
+Debug mode off, thus no debug_output produced
+Sort by distance
+Sort ends
+time used: 2
+Debug mode off, thus no debug_output produced
+Sort by zip code
+Sort ends
+time used: 4
+Debug mode off, thus no debug_output produced
+Processing command line argument over
+    Reference latitude:  0.0   Reference longitude:  0.0
+    File path provided:  ./POI/Shandong10.csv
+    Debug mode off
+Folder  ./ODPairs/  already exists
+Time used to process and store: 1
+Reading and store input file finished
+Total number of lines:  50000
+Debug mode off, thus no debug_output produced
+Sort by distance
+Sort ends
+time used: 2
+Debug mode off, thus no debug_output produced
+Sort by zip code
+Sort ends
+time used: 4
+Debug mode off, thus no debug_output produced
+Processing command line argument over
+    Reference latitude:  0.0   Reference longitude:  0.0
+    File path provided:  ./POI/Shandong11.csv
+    Debug mode off
+Folder  ./ODPairs/  already exists
+Time used to process and store: 1
+Reading and store input file finished
+Total number of lines:  50000
+Debug mode off, thus no debug_output produced
+Sort by distance
+Sort ends
+time used: 2
+Debug mode off, thus no debug_output produced
+Sort by zip code
+Sort ends
+time used: 4
+Debug mode off, thus no debug_output produced
+Processing command line argument over
+    Reference latitude:  0.0   Reference longitude:  0.0
+    File path provided:  ./POI/Shandong12.csv
+    Debug mode off
+Folder  ./ODPairs/  already exists
+Time used to process and store: 1
+Reading and store input file finished
+Total number of lines:  50000
+Debug mode off, thus no debug_output produced
+Sort by distance
+Sort ends
+time used: 2
+Debug mode off, thus no debug_output produced
+Sort by zip code
+Sort ends
+time used: 4
+Debug mode off, thus no debug_output produced
+Processing command line argument over
+    Reference latitude:  0.0   Reference longitude:  0.0
+    File path provided:  ./POI/Shandong13.csv
+    Debug mode off
+Folder  ./ODPairs/  already exists
+Time used to process and store: 1
+Reading and store input file finished
+Total number of lines:  50000
+Debug mode off, thus no debug_output produced
+Sort by distance
+Sort ends
+time used: 2
+Debug mode off, thus no debug_output produced
+Sort by zip code
+Sort ends
+time used: 4
+Debug mode off, thus no debug_output produced
+Processing command line argument over
+    Reference latitude:  0.0   Reference longitude:  0.0
+    File path provided:  ./POI/Shandong14.csv
+    Debug mode off
+Folder  ./ODPairs/  already exists
+Time used to process and store: 1
+Reading and store input file finished
+Total number of lines:  50000
+Debug mode off, thus no debug_output produced
+Sort by distance
+Sort ends
+time used: 2
+Debug mode off, thus no debug_output produced
+Sort by zip code
+Sort ends
+time used: 4
+Debug mode off, thus no debug_output produced
+Processing command line argument over
+    Reference latitude:  0.0   Reference longitude:  0.0
+    File path provided:  ./POI/Shandong15.csv
+    Debug mode off
+Folder  ./ODPairs/  already exists
+Time used to process and store: 1
+Reading and store input file finished
+Total number of lines:  30471
+Debug mode off, thus no debug_output produced
+Sort by distance
+Sort ends
+time used: 1
+Debug mode off, thus no debug_output produced
+Sort by zip code
+Sort ends
+time used: 2
+Debug mode off, thus no debug_output produced
+Processing command line argument over
+    Reference latitude:  0.0   Reference longitude:  0.0
+    File path provided:  ./POI/Shandong2.csv
+    Debug mode off
+Folder  ./ODPairs/  already exists
+Time used to process and store: 1
+Reading and store input file finished
+Total number of lines:  50000
+Debug mode off, thus no debug_output produced
+Sort by distance
+Sort ends
+time used: 2
+Debug mode off, thus no debug_output produced
+Sort by zip code
+Sort ends
+time used: 4
+Debug mode off, thus no debug_output produced
+Processing command line argument over
+    Reference latitude:  0.0   Reference longitude:  0.0
+    File path provided:  ./POI/Shandong3.csv
+    Debug mode off
+Folder  ./ODPairs/  already exists
+Time used to process and store: 1
+Reading and store input file finished
+Total number of lines:  50000
+Debug mode off, thus no debug_output produced
+Sort by distance
+Sort ends
+time used: 2
+Debug mode off, thus no debug_output produced
+Sort by zip code
+Sort ends
+time used: 4
+Debug mode off, thus no debug_output produced
+Processing command line argument over
+    Reference latitude:  0.0   Reference longitude:  0.0
+    File path provided:  ./POI/Shandong4.csv
+    Debug mode off
+Folder  ./ODPairs/  already exists
+Time used to process and store: 1
+Reading and store input file finished
+Total number of lines:  50000
+Debug mode off, thus no debug_output produced
+Sort by distance
+Sort ends
+time used: 2
+Debug mode off, thus no debug_output produced
+Sort by zip code
+Sort ends
+time used: 4
+Debug mode off, thus no debug_output produced
+Processing command line argument over
+    Reference latitude:  0.0   Reference longitude:  0.0
+    File path provided:  ./POI/Shandong5.csv
+    Debug mode off
+Folder  ./ODPairs/  already exists
+Time used to process and store: 1
+Reading and store input file finished
+Total number of lines:  50000
+Debug mode off, thus no debug_output produced
+Sort by distance
+Sort ends
+time used: 2
+Debug mode off, thus no debug_output produced
+Sort by zip code
+Sort ends
+time used: 4
+Debug mode off, thus no debug_output produced
+Processing command line argument over
+    Reference latitude:  0.0   Reference longitude:  0.0
+    File path provided:  ./POI/Shandong6.csv
+    Debug mode off
+Folder  ./ODPairs/  already exists
+Time used to process and store: 1
+Reading and store input file finished
+Total number of lines:  50000
+Debug mode off, thus no debug_output produced
+Sort by distance
+Sort ends
+time used: 2
+Debug mode off, thus no debug_output produced
+Sort by zip code
+Sort ends
+time used: 4
+Debug mode off, thus no debug_output produced
+Processing command line argument over
+    Reference latitude:  0.0   Reference longitude:  0.0
+    File path provided:  ./POI/Shandong7.csv
+    Debug mode off
+Folder  ./ODPairs/  already exists
+Time used to process and store: 1
+Reading and store input file finished
+Total number of lines:  50000
+Debug mode off, thus no debug_output produced
+Sort by distance
+Sort ends
+time used: 2
+Debug mode off, thus no debug_output produced
+Sort by zip code
+Sort ends
+time used: 4
+Debug mode off, thus no debug_output produced
+Processing command line argument over
+    Reference latitude:  0.0   Reference longitude:  0.0
+    File path provided:  ./POI/Shandong8.csv
+    Debug mode off
+Folder  ./ODPairs/  already exists
+Time used to process and store: 1
+Reading and store input file finished
+Total number of lines:  50000
+Debug mode off, thus no debug_output produced
+Sort by distance
+Sort ends
+time used: 2
+Debug mode off, thus no debug_output produced
+Sort by zip code
+Sort ends
+time used: 4
+Debug mode off, thus no debug_output produced
+Processing command line argument over
+    Reference latitude:  0.0   Reference longitude:  0.0
+    File path provided:  ./POI/Shandong9.csv
+    Debug mode off
+Folder  ./ODPairs/  already exists
+Time used to process and store: 1
+Reading and store input file finished
+Total number of lines:  50000
+Debug mode off, thus no debug_output produced
+Sort by distance
+Sort ends
+time used: 2
+Debug mode off, thus no debug_output produced
+Sort by zip code
+Sort ends
+time used: 4
+Debug mode off, thus no debug_output produced
+Processing command line argument over
+    Reference latitude:  0.0   Reference longitude:  0.0
+    File path provided:  ./POI/Shanghai0.csv
+    Debug mode off
+Folder  ./ODPairs/  already exists
+Time used to process and store: 2
+Reading and store input file finished
+Total number of lines:  50000
+Debug mode off, thus no debug_output produced
+Sort by distance
+Sort ends
+time used: 2
+Debug mode off, thus no debug_output produced
+Sort by zip code
+Sort ends
+time used: 4
+Debug mode off, thus no debug_output produced
+Processing command line argument over
+    Reference latitude:  0.0   Reference longitude:  0.0
+    File path provided:  ./POI/Shanghai1.csv
+    Debug mode off
+Folder  ./ODPairs/  already exists
+Time used to process and store: 2
+Reading and store input file finished
+Total number of lines:  50000
+Debug mode off, thus no debug_output produced
+Sort by distance
+Sort ends
+time used: 2
+Debug mode off, thus no debug_output produced
+Sort by zip code
+Sort ends
+time used: 4
+Debug mode off, thus no debug_output produced
+Processing command line argument over
+    Reference latitude:  0.0   Reference longitude:  0.0
+    File path provided:  ./POI/Shanghai2.csv
+    Debug mode off
+Folder  ./ODPairs/  already exists
+Time used to process and store: 2
+Reading and store input file finished
+Total number of lines:  50000
+Debug mode off, thus no debug_output produced
+Sort by distance
+Sort ends
+time used: 2
+Debug mode off, thus no debug_output produced
+Sort by zip code
+Sort ends
+time used: 4
+Debug mode off, thus no debug_output produced
+Processing command line argument over
+    Reference latitude:  0.0   Reference longitude:  0.0
+    File path provided:  ./POI/Shanghai3.csv
+    Debug mode off
+Folder  ./ODPairs/  already exists
+Time used to process and store: 2
+Reading and store input file finished
+Total number of lines:  50000
+Debug mode off, thus no debug_output produced
+Sort by distance
+Sort ends
+time used: 2
+Debug mode off, thus no debug_output produced
+Sort by zip code
+Sort ends
+time used: 4
+Debug mode off, thus no debug_output produced
+Processing command line argument over
+    Reference latitude:  0.0   Reference longitude:  0.0
+    File path provided:  ./POI/Shanghai4.csv
+    Debug mode off
+Folder  ./ODPairs/  already exists
+Time used to process and store: 2
+Reading and store input file finished
+Total number of lines:  50000
+Debug mode off, thus no debug_output produced
+Sort by distance
+Sort ends
+time used: 2
+Debug mode off, thus no debug_output produced
+Sort by zip code
+Sort ends
+time used: 4
+Debug mode off, thus no debug_output produced
+Processing command line argument over
+    Reference latitude:  0.0   Reference longitude:  0.0
+    File path provided:  ./POI/Shanghai5.csv
+    Debug mode off
+Folder  ./ODPairs/  already exists
+Time used to process and store: 2
+Reading and store input file finished
+Total number of lines:  50000
+Debug mode off, thus no debug_output produced
+Sort by distance
+Sort ends
+time used: 2
+Debug mode off, thus no debug_output produced
+Sort by zip code
+Sort ends
+time used: 4
+Debug mode off, thus no debug_output produced
+Processing command line argument over
+    Reference latitude:  0.0   Reference longitude:  0.0
+    File path provided:  ./POI/Shanghai6.csv
+    Debug mode off
+Folder  ./ODPairs/  already exists
+Time used to process and store: 2
+Reading and store input file finished
+Total number of lines:  50000
+Debug mode off, thus no debug_output produced
+Sort by distance
+Sort ends
+time used: 2
+Debug mode off, thus no debug_output produced
+Sort by zip code
+Sort ends
+time used: 4
+Debug mode off, thus no debug_output produced
+Processing command line argument over
+    Reference latitude:  0.0   Reference longitude:  0.0
+    File path provided:  ./POI/Shanghai7.csv
+    Debug mode off
+Folder  ./ODPairs/  already exists
+Time used to process and store: 1
+Reading and store input file finished
+Total number of lines:  50000
+Debug mode off, thus no debug_output produced
+Sort by distance
+Sort ends
+time used: 2
+Debug mode off, thus no debug_output produced
+Sort by zip code
+Sort ends
+time used: 4
+Debug mode off, thus no debug_output produced
+Processing command line argument over
+    Reference latitude:  0.0   Reference longitude:  0.0
+    File path provided:  ./POI/Shanghai8.csv
+    Debug mode off
+Folder  ./ODPairs/  already exists
+Time used to process and store: 2
+Reading and store input file finished
+Total number of lines:  50000
+Debug mode off, thus no debug_output produced
+Sort by distance
+Sort ends
+time used: 2
+Debug mode off, thus no debug_output produced
+Sort by zip code
+Sort ends
+time used: 4
+Debug mode off, thus no debug_output produced
+Processing command line argument over
+    Reference latitude:  0.0   Reference longitude:  0.0
+    File path provided:  ./POI/Shanghai9.csv
+    Debug mode off
+Folder  ./ODPairs/  already exists
+Time used to process and store: 1
+Reading and store input file finished
+Total number of lines:  46997
+Debug mode off, thus no debug_output produced
+Sort by distance
+Sort ends
+time used: 2
+Debug mode off, thus no debug_output produced
+Sort by zip code
+Sort ends
+time used: 4
+Debug mode off, thus no debug_output produced
+Processing command line argument over
+    Reference latitude:  0.0   Reference longitude:  0.0
+    File path provided:  ./POI/Shanxi0.csv
+    Debug mode off
+Folder  ./ODPairs/  already exists
+Time used to process and store: 1
+Reading and store input file finished
+Total number of lines:  50000
+Debug mode off, thus no debug_output produced
+Sort by distance
+Sort ends
+time used: 2
+Debug mode off, thus no debug_output produced
+Sort by zip code
+Sort ends
+time used: 4
+Debug mode off, thus no debug_output produced
+Processing command line argument over
+    Reference latitude:  0.0   Reference longitude:  0.0
+    File path provided:  ./POI/Shanxi1.csv
+    Debug mode off
+Folder  ./ODPairs/  already exists
+Time used to process and store: 1
+Reading and store input file finished
+Total number of lines:  50000
+Debug mode off, thus no debug_output produced
+Sort by distance
+Sort ends
+time used: 2
+Debug mode off, thus no debug_output produced
+Sort by zip code
+Sort ends
+time used: 4
+Debug mode off, thus no debug_output produced
+Processing command line argument over
+    Reference latitude:  0.0   Reference longitude:  0.0
+    File path provided:  ./POI/Shanxi2.csv
+    Debug mode off
+Folder  ./ODPairs/  already exists
+Time used to process and store: 1
+Reading and store input file finished
+Total number of lines:  50000
+Debug mode off, thus no debug_output produced
+Sort by distance
+Sort ends
+time used: 2
+Debug mode off, thus no debug_output produced
+Sort by zip code
+Sort ends
+time used: 4
+Debug mode off, thus no debug_output produced
+Processing command line argument over
+    Reference latitude:  0.0   Reference longitude:  0.0
+    File path provided:  ./POI/Shanxi3.csv
+    Debug mode off
+Folder  ./ODPairs/  already exists
+Time used to process and store: 1
+Reading and store input file finished
+Total number of lines:  50000
+Debug mode off, thus no debug_output produced
+Sort by distance
+Sort ends
+time used: 2
+Debug mode off, thus no debug_output produced
+Sort by zip code
+Sort ends
+time used: 4
+Debug mode off, thus no debug_output produced
+Processing command line argument over
+    Reference latitude:  0.0   Reference longitude:  0.0
+    File path provided:  ./POI/Shanxi4.csv
+    Debug mode off
+Folder  ./ODPairs/  already exists
+Time used to process and store: 1
+Reading and store input file finished
+Total number of lines:  50000
+Debug mode off, thus no debug_output produced
+Sort by distance
+Sort ends
+time used: 2
+Debug mode off, thus no debug_output produced
+Sort by zip code
+Sort ends
+time used: 4
+Debug mode off, thus no debug_output produced
+Processing command line argument over
+    Reference latitude:  0.0   Reference longitude:  0.0
+    File path provided:  ./POI/Shanxi5.csv
+    Debug mode off
+Folder  ./ODPairs/  already exists
+Time used to process and store: 0
+Reading and store input file finished
+Total number of lines:  11603
+Debug mode off, thus no debug_output produced
+Sort by distance
+Sort ends
+time used: 0
+Debug mode off, thus no debug_output produced
+Sort by zip code
+Sort ends
+time used: 1
+Debug mode off, thus no debug_output produced
+Processing command line argument over
+    Reference latitude:  0.0   Reference longitude:  0.0
+    File path provided:  ./POI/Sichuan0.csv
+    Debug mode off
+Folder  ./ODPairs/  already exists
+Time used to process and store: 1
+Reading and store input file finished
+Total number of lines:  33959
+Debug mode off, thus no debug_output produced
+Sort by distance
+Sort ends
+time used: 1
+Debug mode off, thus no debug_output produced
+Sort by zip code
+Sort ends
+time used: 2
+Debug mode off, thus no debug_output produced
+Processing command line argument over
+    Reference latitude:  0.0   Reference longitude:  0.0
+    File path provided:  ./POI/Sichuan1.csv
+    Debug mode off
+Folder  ./ODPairs/  already exists
+Time used to process and store: 1
+Reading and store input file finished
+Total number of lines:  44947
+Debug mode off, thus no debug_output produced
+Sort by distance
+Sort ends
+time used: 2
+Debug mode off, thus no debug_output produced
+Sort by zip code
+Sort ends
+time used: 3
+Debug mode off, thus no debug_output produced
+Processing command line argument over
+    Reference latitude:  0.0   Reference longitude:  0.0
+    File path provided:  ./POI/Sichuan10.csv
+    Debug mode off
+Folder  ./ODPairs/  already exists
+Time used to process and store: 3
+Reading and store input file finished
+Total number of lines:  100000
+Debug mode off, thus no debug_output produced
+Sort by distance
+Sort ends
+time used: 5
+Debug mode off, thus no debug_output produced
+Sort by zip code
+Sort ends
+time used: 8
+Debug mode off, thus no debug_output produced
+Processing command line argument over
+    Reference latitude:  0.0   Reference longitude:  0.0
+    File path provided:  ./POI/Sichuan11.csv
+    Debug mode off
+Folder  ./ODPairs/  already exists
+Time used to process and store: 3
+Reading and store input file finished
+Total number of lines:  100000
+Debug mode off, thus no debug_output produced
+Sort by distance
+Sort ends
+time used: 5
+Debug mode off, thus no debug_output produced
+Sort by zip code
+Sort ends
+time used: 8
+Debug mode off, thus no debug_output produced
+Processing command line argument over
+    Reference latitude:  0.0   Reference longitude:  0.0
+    File path provided:  ./POI/Sichuan12.csv
+    Debug mode off
+Folder  ./ODPairs/  already exists
+Time used to process and store: 3
+Reading and store input file finished
+Total number of lines:  100000
+Debug mode off, thus no debug_output produced
+Sort by distance
+Sort ends
+time used: 5
+Debug mode off, thus no debug_output produced
+Sort by zip code
+Sort ends
+time used: 8
+Debug mode off, thus no debug_output produced
+Processing command line argument over
+    Reference latitude:  0.0   Reference longitude:  0.0
+    File path provided:  ./POI/Sichuan13.csv
+    Debug mode off
+Folder  ./ODPairs/  already exists
+Time used to process and store: 3
+Reading and store input file finished
+Total number of lines:  84334
+Debug mode off, thus no debug_output produced
+Sort by distance
+Sort ends
+time used: 4
+Debug mode off, thus no debug_output produced
+Sort by zip code
+Sort ends
+time used: 7
+Debug mode off, thus no debug_output produced
+Processing command line argument over
+    Reference latitude:  0.0   Reference longitude:  0.0
+    File path provided:  ./POI/Sichuan2.csv
+    Debug mode off
+Folder  ./ODPairs/  already exists
+Time used to process and store: 2
+Reading and store input file finished
+Total number of lines:  53201
+Debug mode off, thus no debug_output produced
+Sort by distance
+Sort ends
+time used: 2
+Debug mode off, thus no debug_output produced
+Sort by zip code
+Sort ends
+time used: 4
+Debug mode off, thus no debug_output produced
+Processing command line argument over
+    Reference latitude:  0.0   Reference longitude:  0.0
+    File path provided:  ./POI/Sichuan3.csv
+    Debug mode off
+Folder  ./ODPairs/  already exists
+Time used to process and store: 2
+Reading and store input file finished
+Total number of lines:  62671
+Debug mode off, thus no debug_output produced
+Sort by distance
+Sort ends
+time used: 3
+Debug mode off, thus no debug_output produced
+Sort by zip code
+Sort ends
+time used: 5
+Debug mode off, thus no debug_output produced
+Processing command line argument over
+    Reference latitude:  0.0   Reference longitude:  0.0
+    File path provided:  ./POI/Sichuan4.csv
+    Debug mode off
+Folder  ./ODPairs/  already exists
+Time used to process and store: 3
+Reading and store input file finished
+Total number of lines:  84224
+Debug mode off, thus no debug_output produced
+Sort by distance
+Sort ends
+time used: 4
+Debug mode off, thus no debug_output produced
+Sort by zip code
+Sort ends
+time used: 7
+Debug mode off, thus no debug_output produced
+Processing command line argument over
+    Reference latitude:  0.0   Reference longitude:  0.0
+    File path provided:  ./POI/Sichuan5.csv
+    Debug mode off
+Folder  ./ODPairs/  already exists
+Time used to process and store: 3
+Reading and store input file finished
+Total number of lines:  100000
+Debug mode off, thus no debug_output produced
+Sort by distance
+Sort ends
+time used: 5
+Debug mode off, thus no debug_output produced
+Sort by zip code
+Sort ends
+time used: 8
+Debug mode off, thus no debug_output produced
+Processing command line argument over
+    Reference latitude:  0.0   Reference longitude:  0.0
+    File path provided:  ./POI/Sichuan6.csv
+    Debug mode off
+Folder  ./ODPairs/  already exists
+Time used to process and store: 4
+Reading and store input file finished
+Total number of lines:  100000
+Debug mode off, thus no debug_output produced
+Sort by distance
+Sort ends
+time used: 6
+Debug mode off, thus no debug_output produced
+Sort by zip code
+Sort ends
+time used: 8
+Debug mode off, thus no debug_output produced
+Processing command line argument over
+    Reference latitude:  0.0   Reference longitude:  0.0
+    File path provided:  ./POI/Sichuan7.csv
+    Debug mode off
+Folder  ./ODPairs/  already exists
+Time used to process and store: 3
+Reading and store input file finished
+Total number of lines:  100000
+Debug mode off, thus no debug_output produced
+Sort by distance
+Sort ends
+time used: 5
+Debug mode off, thus no debug_output produced
+Sort by zip code
+Sort ends
+time used: 8
+Debug mode off, thus no debug_output produced
+Processing command line argument over
+    Reference latitude:  0.0   Reference longitude:  0.0
+    File path provided:  ./POI/Sichuan8.csv
+    Debug mode off
+Folder  ./ODPairs/  already exists
+Time used to process and store: 3
+Reading and store input file finished
+Total number of lines:  100000
+Debug mode off, thus no debug_output produced
+Sort by distance
+Sort ends
+time used: 5
+Debug mode off, thus no debug_output produced
+Sort by zip code
+Sort ends
+time used: 8
+Debug mode off, thus no debug_output produced
+Processing command line argument over
+    Reference latitude:  0.0   Reference longitude:  0.0
+    File path provided:  ./POI/Sichuan9.csv
+    Debug mode off
+Folder  ./ODPairs/  already exists
+Time used to process and store: 4
+Reading and store input file finished
+Total number of lines:  100000
+Debug mode off, thus no debug_output produced
+Sort by distance
+Sort ends
+time used: 5
+Debug mode off, thus no debug_output produced
+Sort by zip code
+Sort ends
+time used: 9
+Debug mode off, thus no debug_output produced
+Processing command line argument over
+    Reference latitude:  0.0   Reference longitude:  0.0
+    File path provided:  ./POI/Tianjin0.csv
+    Debug mode off
+Folder  ./ODPairs/  already exists
+Time used to process and store: 2
+Reading and store input file finished
+Total number of lines:  50000
+Debug mode off, thus no debug_output produced
+Sort by distance
+Sort ends
+time used: 4
+Debug mode off, thus no debug_output produced
+Sort by zip code
+Sort ends
+time used: 4
+Debug mode off, thus no debug_output produced
+Processing command line argument over
+    Reference latitude:  0.0   Reference longitude:  0.0
+    File path provided:  ./POI/Tianjin1.csv
+    Debug mode off
+Folder  ./ODPairs/  already exists
+Time used to process and store: 2
+Reading and store input file finished
+Total number of lines:  50000
+Debug mode off, thus no debug_output produced
+Sort by distance
+Sort ends
+time used: 2
+Debug mode off, thus no debug_output produced
+Sort by zip code
+Sort ends
+time used: 4
+Debug mode off, thus no debug_output produced
+Processing command line argument over
+    Reference latitude:  0.0   Reference longitude:  0.0
+    File path provided:  ./POI/Tianjin2.csv
+    Debug mode off
+Folder  ./ODPairs/  already exists
+Time used to process and store: 1
+Reading and store input file finished
+Total number of lines:  50000
+Debug mode off, thus no debug_output produced
+Sort by distance
+Sort ends
+time used: 2
+Debug mode off, thus no debug_output produced
+Sort by zip code
+Sort ends
+time used: 4
+Debug mode off, thus no debug_output produced
+Processing command line argument over
+    Reference latitude:  0.0   Reference longitude:  0.0
+    File path provided:  ./POI/Tianjin3.csv
+    Debug mode off
+Folder  ./ODPairs/  already exists
+Time used to process and store: 1
+Reading and store input file finished
+Total number of lines:  48401
+Debug mode off, thus no debug_output produced
+Sort by distance
+Sort ends
+time used: 2
+Debug mode off, thus no debug_output produced
+Sort by zip code
+Sort ends
+time used: 4
+Debug mode off, thus no debug_output produced
+Processing command line argument over
+    Reference latitude:  0.0   Reference longitude:  0.0
+    File path provided:  ./POI/Xinjiang0.csv
+    Debug mode off
+Folder  ./ODPairs/  already exists
+Time used to process and store: 1
+Reading and store input file finished
+Total number of lines:  50000
+Debug mode off, thus no debug_output produced
+Sort by distance
+Sort ends
+time used: 2
+Debug mode off, thus no debug_output produced
+Sort by zip code
+Sort ends
+time used: 4
+Debug mode off, thus no debug_output produced
+Processing command line argument over
+    Reference latitude:  0.0   Reference longitude:  0.0
+    File path provided:  ./POI/Xinjiang1.csv
+    Debug mode off
+Folder  ./ODPairs/  already exists
+Time used to process and store: 1
+Reading and store input file finished
+Total number of lines:  50000
+Debug mode off, thus no debug_output produced
+Sort by distance
+Sort ends
+time used: 2
+Debug mode off, thus no debug_output produced
+Sort by zip code
+Sort ends
+time used: 4
+Debug mode off, thus no debug_output produced
+Processing command line argument over
+    Reference latitude:  0.0   Reference longitude:  0.0
+    File path provided:  ./POI/Xinjiang2.csv
+    Debug mode off
+Folder  ./ODPairs/  already exists
+Time used to process and store: 1
+Reading and store input file finished
+Total number of lines:  50000
+Debug mode off, thus no debug_output produced
+Sort by distance
+Sort ends
+time used: 2
+Debug mode off, thus no debug_output produced
+Sort by zip code
+Sort ends
+time used: 4
+Debug mode off, thus no debug_output produced
+Processing command line argument over
+    Reference latitude:  0.0   Reference longitude:  0.0
+    File path provided:  ./POI/Xinjiang3.csv
+    Debug mode off
+Folder  ./ODPairs/  already exists
+Time used to process and store: 0
+Reading and store input file finished
+Total number of lines:  302
+Debug mode off, thus no debug_output produced
+Sort by distance
+Sort ends
+time used: 0
+Debug mode off, thus no debug_output produced
+Sort by zip code
+Sort ends
+time used: 0
+Debug mode off, thus no debug_output produced
+Processing command line argument over
+    Reference latitude:  0.0   Reference longitude:  0.0
+    File path provided:  ./POI/Xizang0.csv
+    Debug mode off
+Folder  ./ODPairs/  already exists
+Time used to process and store: 1
+Reading and store input file finished
+Total number of lines:  29873
+Debug mode off, thus no debug_output produced
+Sort by distance
+Sort ends
+time used: 1
+Debug mode off, thus no debug_output produced
+Sort by zip code
+Sort ends
+time used: 2
+Debug mode off, thus no debug_output produced
+Processing command line argument over
+    Reference latitude:  0.0   Reference longitude:  0.0
+    File path provided:  ./POI/Yunnan0.csv
+    Debug mode off
+Folder  ./ODPairs/  already exists
+Time used to process and store: 1
+Reading and store input file finished
+Total number of lines:  50000
+Debug mode off, thus no debug_output produced
+Sort by distance
+Sort ends
+time used: 2
+Debug mode off, thus no debug_output produced
+Sort by zip code
+Sort ends
+time used: 4
+Debug mode off, thus no debug_output produced
+Processing command line argument over
+    Reference latitude:  0.0   Reference longitude:  0.0
+    File path provided:  ./POI/Yunnan1.csv
+    Debug mode off
+Folder  ./ODPairs/  already exists
+Time used to process and store: 2
+Reading and store input file finished
+Total number of lines:  50000
+Debug mode off, thus no debug_output produced
+Sort by distance
+Sort ends
+time used: 2
+Debug mode off, thus no debug_output produced
+Sort by zip code
+Sort ends
+time used: 4
+Debug mode off, thus no debug_output produced
+Processing command line argument over
+    Reference latitude:  0.0   Reference longitude:  0.0
+    File path provided:  ./POI/Yunnan2.csv
+    Debug mode off
+Folder  ./ODPairs/  already exists
+Time used to process and store: 1
+Reading and store input file finished
+Total number of lines:  50000
+Debug mode off, thus no debug_output produced
+Sort by distance
+Sort ends
+time used: 2
+Debug mode off, thus no debug_output produced
+Sort by zip code
+Sort ends
+time used: 4
+Debug mode off, thus no debug_output produced
+Processing command line argument over
+    Reference latitude:  0.0   Reference longitude:  0.0
+    File path provided:  ./POI/Yunnan3.csv
+    Debug mode off
+Folder  ./ODPairs/  already exists
+Time used to process and store: 1
+Reading and store input file finished
+Total number of lines:  50000
+Debug mode off, thus no debug_output produced
+Sort by distance
+Sort ends
+time used: 2
+Debug mode off, thus no debug_output produced
+Sort by zip code
+Sort ends
+time used: 4
+Debug mode off, thus no debug_output produced
+Processing command line argument over
+    Reference latitude:  0.0   Reference longitude:  0.0
+    File path provided:  ./POI/Yunnan4.csv
+    Debug mode off
+Folder  ./ODPairs/  already exists
+Time used to process and store: 2
+Reading and store input file finished
+Total number of lines:  50000
+Debug mode off, thus no debug_output produced
+Sort by distance
+Sort ends
+time used: 2
+Debug mode off, thus no debug_output produced
+Sort by zip code
+Sort ends
+time used: 4
+Debug mode off, thus no debug_output produced
+Processing command line argument over
+    Reference latitude:  0.0   Reference longitude:  0.0
+    File path provided:  ./POI/Yunnan5.csv
+    Debug mode off
+Folder  ./ODPairs/  already exists
+Time used to process and store: 2
+Reading and store input file finished
+Total number of lines:  50000
+Debug mode off, thus no debug_output produced
+Sort by distance
+Sort ends
+time used: 2
+Debug mode off, thus no debug_output produced
+Sort by zip code
+Sort ends
+time used: 4
+Debug mode off, thus no debug_output produced
+Processing command line argument over
+    Reference latitude:  0.0   Reference longitude:  0.0
+    File path provided:  ./POI/Yunnan6.csv
+    Debug mode off
+Folder  ./ODPairs/  already exists
+Time used to process and store: 1
+Reading and store input file finished
+Total number of lines:  41205
+Debug mode off, thus no debug_output produced
+Sort by distance
+Sort ends
+time used: 2
+Debug mode off, thus no debug_output produced
+Sort by zip code
+Sort ends
+time used: 3
+Debug mode off, thus no debug_output produced
+Processing command line argument over
+    Reference latitude:  0.0   Reference longitude:  0.0
+    File path provided:  ./POI/Zhejiang0.csv
+    Debug mode off
+Folder  ./ODPairs/  already exists
+Time used to process and store: 2
+Reading and store input file finished
+Total number of lines:  50000
+Debug mode off, thus no debug_output produced
+Sort by distance
+Sort ends
+time used: 2
+Debug mode off, thus no debug_output produced
+Sort by zip code
+Sort ends
+time used: 4
+Debug mode off, thus no debug_output produced
+Processing command line argument over
+    Reference latitude:  0.0   Reference longitude:  0.0
+    File path provided:  ./POI/Zhejiang1.csv
+    Debug mode off
+Folder  ./ODPairs/  already exists
+Time used to process and store: 2
+Reading and store input file finished
+Total number of lines:  50000
+Debug mode off, thus no debug_output produced
+Sort by distance
+Sort ends
+time used: 2
+Debug mode off, thus no debug_output produced
+Sort by zip code
+Sort ends
+time used: 4
+Debug mode off, thus no debug_output produced
+Processing command line argument over
+    Reference latitude:  0.0   Reference longitude:  0.0
+    File path provided:  ./POI/Zhejiang10.csv
+    Debug mode off
+Folder  ./ODPairs/  already exists
+Time used to process and store: 2
+Reading and store input file finished
+Total number of lines:  50000
+Debug mode off, thus no debug_output produced
+Sort by distance
+Sort ends
+time used: 2
+Debug mode off, thus no debug_output produced
+Sort by zip code
+Sort ends
+time used: 4
+Debug mode off, thus no debug_output produced
+Processing command line argument over
+    Reference latitude:  0.0   Reference longitude:  0.0
+    File path provided:  ./POI/Zhejiang11.csv
+    Debug mode off
+Folder  ./ODPairs/  already exists
+Time used to process and store: 2
+Reading and store input file finished
+Total number of lines:  50000
+Debug mode off, thus no debug_output produced
+Sort by distance
+Sort ends
+time used: 2
+Debug mode off, thus no debug_output produced
+Sort by zip code
+Sort ends
+time used: 4
+Debug mode off, thus no debug_output produced
+Processing command line argument over
+    Reference latitude:  0.0   Reference longitude:  0.0
+    File path provided:  ./POI/Zhejiang12.csv
+    Debug mode off
+Folder  ./ODPairs/  already exists
+Time used to process and store: 2
+Reading and store input file finished
+Total number of lines:  50000
+Debug mode off, thus no debug_output produced
+Sort by distance
+Sort ends
+time used: 2
+Debug mode off, thus no debug_output produced
+Sort by zip code
+Sort ends
+time used: 4
+Debug mode off, thus no debug_output produced
+Processing command line argument over
+    Reference latitude:  0.0   Reference longitude:  0.0
+    File path provided:  ./POI/Zhejiang13.csv
+    Debug mode off
+Folder  ./ODPairs/  already exists
+Time used to process and store: 2
+Reading and store input file finished
+Total number of lines:  50000
+Debug mode off, thus no debug_output produced
+Sort by distance
+Sort ends
+time used: 2
+Debug mode off, thus no debug_output produced
+Sort by zip code
+Sort ends
+time used: 4
+Debug mode off, thus no debug_output produced
+Processing command line argument over
+    Reference latitude:  0.0   Reference longitude:  0.0
+    File path provided:  ./POI/Zhejiang14.csv
+    Debug mode off
+Folder  ./ODPairs/  already exists
+Time used to process and store: 2
+Reading and store input file finished
+Total number of lines:  50000
+Debug mode off, thus no debug_output produced
+Sort by distance
+Sort ends
+time used: 2
+Debug mode off, thus no debug_output produced
+Sort by zip code
+Sort ends
+time used: 4
+Debug mode off, thus no debug_output produced
+Processing command line argument over
+    Reference latitude:  0.0   Reference longitude:  0.0
+    File path provided:  ./POI/Zhejiang15.csv
+    Debug mode off
+Folder  ./ODPairs/  already exists
+Time used to process and store: 2
+Reading and store input file finished
+Total number of lines:  50000
+Debug mode off, thus no debug_output produced
+Sort by distance
+Sort ends
+time used: 2
+Debug mode off, thus no debug_output produced
+Sort by zip code
+Sort ends
+time used: 4
+Debug mode off, thus no debug_output produced
+Processing command line argument over
+    Reference latitude:  0.0   Reference longitude:  0.0
+    File path provided:  ./POI/Zhejiang16.csv
+    Debug mode off
+Folder  ./ODPairs/  already exists
+Time used to process and store: 2
+Reading and store input file finished
+Total number of lines:  50000
+Debug mode off, thus no debug_output produced
+Sort by distance
+Sort ends
+time used: 2
+Debug mode off, thus no debug_output produced
+Sort by zip code
+Sort ends
+time used: 4
+Debug mode off, thus no debug_output produced
+Processing command line argument over
+    Reference latitude:  0.0   Reference longitude:  0.0
+    File path provided:  ./POI/Zhejiang17.csv
+    Debug mode off
+Folder  ./ODPairs/  already exists
+Time used to process and store: 2
+Reading and store input file finished
+Total number of lines:  50000
+Debug mode off, thus no debug_output produced
+Sort by distance
+Sort ends
+time used: 2
+Debug mode off, thus no debug_output produced
+Sort by zip code
+Sort ends
+time used: 4
+Debug mode off, thus no debug_output produced
+Processing command line argument over
+    Reference latitude:  0.0   Reference longitude:  0.0
+    File path provided:  ./POI/Zhejiang18.csv
+    Debug mode off
+Folder  ./ODPairs/  already exists
+Time used to process and store: 2
+Reading and store input file finished
+Total number of lines:  50000
+Debug mode off, thus no debug_output produced
+Sort by distance
+Sort ends
+time used: 2
+Debug mode off, thus no debug_output produced
+Sort by zip code
+Sort ends
+time used: 4
+Debug mode off, thus no debug_output produced
+Processing command line argument over
+    Reference latitude:  0.0   Reference longitude:  0.0
+    File path provided:  ./POI/Zhejiang19.csv
+    Debug mode off
+Folder  ./ODPairs/  already exists
+Time used to process and store: 2
+Reading and store input file finished
+Total number of lines:  50000
+Debug mode off, thus no debug_output produced
+Sort by distance
+Sort ends
+time used: 2
+Debug mode off, thus no debug_output produced
+Sort by zip code
+Sort ends
+time used: 4
+Debug mode off, thus no debug_output produced
+Processing command line argument over
+    Reference latitude:  0.0   Reference longitude:  0.0
+    File path provided:  ./POI/Zhejiang2.csv
+    Debug mode off
+Folder  ./ODPairs/  already exists
+Time used to process and store: 2
+Reading and store input file finished
+Total number of lines:  50000
+Debug mode off, thus no debug_output produced
+Sort by distance
+Sort ends
+time used: 2
+Debug mode off, thus no debug_output produced
+Sort by zip code
+Sort ends
+time used: 4
+Debug mode off, thus no debug_output produced
+Processing command line argument over
+    Reference latitude:  0.0   Reference longitude:  0.0
+    File path provided:  ./POI/Zhejiang20.csv
+    Debug mode off
+Folder  ./ODPairs/  already exists
+Time used to process and store: 1
+Reading and store input file finished
+Total number of lines:  40714
+Debug mode off, thus no debug_output produced
+Sort by distance
+Sort ends
+time used: 2
+Debug mode off, thus no debug_output produced
+Sort by zip code
+Sort ends
+time used: 4
+Debug mode off, thus no debug_output produced
+Processing command line argument over
+    Reference latitude:  0.0   Reference longitude:  0.0
+    File path provided:  ./POI/Zhejiang3.csv
+    Debug mode off
+Folder  ./ODPairs/  already exists
+Time used to process and store: 2
+Reading and store input file finished
+Total number of lines:  50000
+Debug mode off, thus no debug_output produced
+Sort by distance
+Sort ends
+time used: 2
+Debug mode off, thus no debug_output produced
+Sort by zip code
+Sort ends
+time used: 4
+Debug mode off, thus no debug_output produced
+Processing command line argument over
+    Reference latitude:  0.0   Reference longitude:  0.0
+    File path provided:  ./POI/Zhejiang4.csv
+    Debug mode off
+Folder  ./ODPairs/  already exists
+Time used to process and store: 2
+Reading and store input file finished
+Total number of lines:  50000
+Debug mode off, thus no debug_output produced
+Sort by distance
+Sort ends
+time used: 2
+Debug mode off, thus no debug_output produced
+Sort by zip code
+Sort ends
+time used: 4
+Debug mode off, thus no debug_output produced
+Processing command line argument over
+    Reference latitude:  0.0   Reference longitude:  0.0
+    File path provided:  ./POI/Zhejiang5.csv
+    Debug mode off
+Folder  ./ODPairs/  already exists
+Time used to process and store: 2
+Reading and store input file finished
+Total number of lines:  50000
+Debug mode off, thus no debug_output produced
+Sort by distance
+Sort ends
+time used: 2
+Debug mode off, thus no debug_output produced
+Sort by zip code
+Sort ends
+time used: 5
+Debug mode off, thus no debug_output produced
+Processing command line argument over
+    Reference latitude:  0.0   Reference longitude:  0.0
+    File path provided:  ./POI/Zhejiang6.csv
+    Debug mode off
+Folder  ./ODPairs/  already exists
+Time used to process and store: 2
+Reading and store input file finished
+Total number of lines:  50000
+Debug mode off, thus no debug_output produced
+Sort by distance
+Sort ends
+time used: 2
+Debug mode off, thus no debug_output produced
+Sort by zip code
+Sort ends
+time used: 4
+Debug mode off, thus no debug_output produced
+Processing command line argument over
+    Reference latitude:  0.0   Reference longitude:  0.0
+    File path provided:  ./POI/Zhejiang7.csv
+    Debug mode off
+Folder  ./ODPairs/  already exists
+Time used to process and store: 2
+Reading and store input file finished
+Total number of lines:  50000
+Debug mode off, thus no debug_output produced
+Sort by distance
+Sort ends
+time used: 2
+Debug mode off, thus no debug_output produced
+Sort by zip code
+Sort ends
+time used: 4
+Debug mode off, thus no debug_output produced
+Processing command line argument over
+    Reference latitude:  0.0   Reference longitude:  0.0
+    File path provided:  ./POI/Zhejiang8.csv
+    Debug mode off
+Folder  ./ODPairs/  already exists
+Time used to process and store: 2
+Reading and store input file finished
+Total number of lines:  50000
+Debug mode off, thus no debug_output produced
+Sort by distance
+Sort ends
+time used: 2
+Debug mode off, thus no debug_output produced
+Sort by zip code
+Sort ends
+time used: 4
+Debug mode off, thus no debug_output produced
+Processing command line argument over
+    Reference latitude:  0.0   Reference longitude:  0.0
+    File path provided:  ./POI/Zhejiang9.csv
+    Debug mode off
+Folder  ./ODPairs/  already exists
+Time used to process and store: 2
+Reading and store input file finished
+Total number of lines:  50000
+Debug mode off, thus no debug_output produced
+Sort by distance
+Sort ends
+time used: 2
+Debug mode off, thus no debug_output produced
+Sort by zip code
+Sort ends
+time used: 4
+Debug mode off, thus no debug_output produced

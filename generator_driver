@@ -1,0 +1,37 @@
+#! /bin/bash
+
+
+# NOTE: I added LC_ALL=C because in some other locales, 'sort' does very
+#       strange things!  See:
+#   https://www.gnu.org/software/coreutils/faq/coreutils-faq.html#Sort-does-not-sort-in-normal-order_0021
+export LC_ALL=C
+
+
+TIME_LIMIT=10     # in seconds
+
+DOT_FILE_TESTER=ODGenerator
+
+if [[ ! -f ${DOT_FILE_TESTER}.py ]]
+then
+  echo "ERROR: ${DOT_FILE_TESTER}.py does not exist.  The grading script cannot continue." 1>&2
+  exit 1
+else
+  echo "Successfully find ${DOT_FILE_TESTER}.py in the current directory. Start running script"
+fi
+
+DIR=./POI/
+
+if [ ! -d ${DIR} ]; then
+	echo "No such directory: ${DIR}"
+else
+	FILES=`ls ${DIR}`
+	
+	for X in ${FILES}; do
+		python2 ODGenerator.py  -f ${DIR}${X}
+	done
+fi
+
+
+
+  
+
