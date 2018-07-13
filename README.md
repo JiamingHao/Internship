@@ -35,7 +35,7 @@ once in one file.
 			smallDisFromRef: sort all the entries by their distance from given reference point or from default(latitude: 0.0 longitude: 0.0)
                               then produce OD pairs having comparatively small sphere distance from the reference point.
 
-            middleDisFromRef: same as the previous except producing OD pairs having comparatively medium sphere distance from the point.
+			middleDisFromRef: same as the previous except producing OD pairs having comparatively medium sphere distance from the point.
 
 			largeDisFromRef: same as the previous except producing OD pairs having comparatively large sphere distance from the point.
 
