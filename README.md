@@ -9,7 +9,7 @@ from that. Just invoke the python program by itself, the syntax is:
 			(if corresponding command line arguments are not provided, it will use defaults)
 
  			[numOfPairs]: represents the number of OD pairs you want to generate in each 
-			output file eg. "python2 ODGenerator.py -n 100" will make the script 100 pairs of OD in each output file using different strategies.
+			output file eg. "python2 ODGenerator.py -n 100" will make the script produce 100 pairs of OD in each output file using different strategies.
 			default num of pairs: 50
 
 			[filePath]:represents the input file path
@@ -31,12 +31,12 @@ once in one file.
 			generateRandomPairs: just randomly generate OD pairs
 
 			closeCategoryID: sort all the entries by their category id, and then produce OD pairs having 
-                              very close category id, usually this will produce OD pairs with the same category id.
+			very close category id, usually this will produce OD pairs with the same category id.
 
 			distinctCategoryID: sort all the entries by their category id, produce OD pairs having most distinct category id
 
 			smallDisFromRef: sort all the entries by their distance from given reference point or from default(latitude: 0.0 longitude: 0.0)
-                              then produce OD pairs having comparatively small sphere distance from the reference point.
+			then produce OD pairs having comparatively small sphere distance from the reference point.
 
 			middleDisFromRef: same as the previous except producing OD pairs having comparatively medium sphere distance from the point.
 
