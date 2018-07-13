@@ -44,13 +44,14 @@ once in one file.
 
 The bash script is used for the situation when users want to batch process a large number of input files. Since it is written in 
 bash, it can only be run in OS with bash shell. To run the script, make sure that you give the script execution permission,
-the script and the ODGenerator program need to be in the same directory, and all the input files neeeded to be put in a directory named POI. When running, 
+the script and the ODGenerator program need to be in the same directory, and all the input files needed to be put in a directory named POI. 
+Of course, user can specify the directory path when running the shell script if they like, "./POI/" is the default. When running, 
 the script will scan all the files in the POI directory and automatically invoke the Generator on them. All the output files will be put in 
 a directory called ODPairs (same as invoking the ODGenerator by itself)
 
-User can just invoke the bash shell script generator_driver by itself with no command line arguments or specify the path of the directory storing all 
-the input csv files you want to run the Generator on in one time as well as telling how many pairs of OD are required in each file and providing reference 
-latitude and longitude.Usage of the bash shell script is:
+As referred in the above, users can just invoke the bash shell script generator_driver by itself with no command line arguments or specify the path of 
+the directory storing all the input csv files they want to run the Generator on in one time as well as telling how many pairs of OD are required in each file 
+and providing reference latitude and longitude. The usage of the bash shell script is:
 
 			generator_driver [[-f|--file DirectoryPath ] [-n|--numOfPairs NumberOfPairs] [-d|--debug] [-h|--help] [-la|--latitude reference latitude] [-lo|--longitude reference longitude]]
 
