@@ -11,7 +11,7 @@
  					output file
  
  
-		    [filePath]:represents the input file path
+			[filePath]:represents the input file path
  
  			[latitude] and [longitude]: these two arguments are related with 
  					the strategy used in generating the OD pairs.(see below for details)
@@ -23,20 +23,20 @@
 file with the name in the format of [inputFileName][methodName].dat. All the methods guarantee that
 no duplicate OD pairs (pairs with the same starting and ending points) will be generated more than 
 once in one file.
- 
+
  		    generateRandomPairs: just randomly generate OD pairs
- 
+
  	  		minZipCodeDifference: sort all the entries by their zip code, and then produce OD pairs having 
                               very close zip code, usually this will produce OD pairs with the same zip code.
- 
+
             largeZipCodeDifference: sort all the entries by their zip code, produce OD pairs having largest zip
                               code differnece
-  
+
             smallDisFromRef: sort all the entries by their distance from given reference point or from default(latitude: 0.0 longitude: 0.0)
                               then produce OD pairs having comparatively small sphere distance from the reference point.
            
             middleDisFromRef: same as the previous except producing OD pairs having comparatively medium sphere distance from the point.
- 
+
  			largeDisFromRef: same as the previous except producing OD pairs having comparatively large sphere distance from the point.
 
 	The bash script is used for the situation when users want to batch process a large number of input files. Since it is written in 
@@ -48,12 +48,12 @@ a directory called ODPairs (same as invoking the ODGenerator by itself)
 Other points to notice：
 			It turns out that some entries in some files have irregular format. For instance, the 4327th entry of Qinghai0.csv,which is 
  			'"803486270","海西供电公司�', entries like this will be ignored
- 
+
  			The program is only tested with the POI inputs of China, for POI from foreign countries, it might work, but no guarantee.
-   
-            For those entries with no zip codes provided, the program will recognize them as the ones with the smallest zip codes by default.
-            
-            For those entry having option zip codes, such as 34|1098.... The program will only consider the first one
- 
-    Thanks for your reading.
+
+			For those entries with no zip codes provided, the program will recognize them as the ones with the smallest zip codes by default.
+
+			For those entry having option zip codes, such as 34|1098.... The program will only consider the first one
+
+	Thanks for your reading.
  
