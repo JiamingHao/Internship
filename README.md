@@ -23,7 +23,7 @@ from that. Just invoke the python program by itself, the syntax is:
  			[-d]: when the -d flag is turned on the program will run in debug mode. It will generate debug 
 					files after each sorting operation.(see below for details)
 
- 	Altogether there are six methods to generate OD pairs, each of them will produce a single output 
+Altogether there are six methods to generate OD pairs, each of them will produce a single output 
 file with the name in the format of [inputFileName][methodName].xml. All the methods guarantee that
 no duplicate OD pairs (pairs with the same starting and ending points) will be generated more than 
 once in one file.
@@ -42,13 +42,13 @@ once in one file.
 
 			largeDisFromRef: same as the previous except producing OD pairs having comparatively large sphere distance from the point.
 
-	The bash script is used for the situation when users want to batch process a large number of input files. Since it is written in 
+The bash script is used for the situation when users want to batch process a large number of input files. Since it is written in 
 bash, it can only be run in OS with bash shell. To run the script, make sure that you give the script execution permission,
 the script and the ODGenerator program need to be in the same directory, and all the input files neeeded to be put in a directory named POI. When running, 
 the script will scan all the files in the POI directory and automatically invoke the Generator on them. All the output files will be put in 
 a directory called ODPairs (same as invoking the ODGenerator by itself)
 
-	User can just invoke the bash shell script generator_driver by itself with no command line arguments or specify the path of the directory storing all 
+User can just invoke the bash shell script generator_driver by itself with no command line arguments or specify the path of the directory storing all 
 the input csv files you want to run the Generator on in one time as well as telling how many pairs of OD are required in each file and providing reference 
 latitude and longitude.Usage of the bash shell script is:
 
@@ -71,5 +71,5 @@ Other points to notice:
 
 			All the problematic lines in each input file will be collected and produce a report for them under debug mode
 
-	Thanks for your reading.
+Thanks for your reading.
  
