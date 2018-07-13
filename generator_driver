@@ -2,7 +2,7 @@
 
 usage()
 {
-    echo "usage: generator_driver [[-f|--file filePath ] [-n|--numOfPairs NumberOfPairs] [-d|--debug] [-h|--help]]"
+    echo "usage: generator_driver [[-f|--file DirectoryPath ] [-n|--numOfPairs NumberOfPairs] [-d|--debug] [-h|--help] [-la|--latitude reference latitude] [-lo|--longitude reference longitude]]"
 }
 
 DOT_FILE_TESTER=ODGenerator
@@ -10,6 +10,8 @@ DOT_FILE_TESTER=ODGenerator
 DIR=./POI/
 NUM=50
 DEBUG=
+REF_LATITUDE=0.0
+REF_LONGITUDE=0.0
 
 while [ "$1" != "" ]; do
     case $1 in
@@ -24,13 +26,20 @@ while [ "$1" != "" ]; do
                                 ;;
         -d | --debug )          DEBUG=1
                                 ;;
+        -la | --latitude)       shift 
+                                REF_LATITUDE=$1
+                                ;;
+        -lo | --longitude)      shift 
+                                REF_LONGITUDE=$1
+                                ;;
         * )                     usage
                                 exit 1
     esac
     shift
 done
 
-echo "filePath = $DIR"
+echo "Directory Path = $DIR"
+
 if echo "$NUM" | egrep -q '^\-?[0-9]+$'; then 
     echo "Num of cases for each = $NUM"
 else 
@@ -38,6 +47,20 @@ else
 	exit 1
 fi
 
+
+if echo "$REF_LATITUDE" | egrep -q '^\-?[0-9]*\.?[0-9]+$'; then 
+    echo "Reference latitude for all the input files: $REF_LATITUDE"
+else 
+    echo "Reference latitude given is not a number!"
+	exit 1
+fi
+
+if echo "$REF_LONGITUDE" | egrep -q '^\-?[0-9]*\.?[0-9]+$'; then 
+    echo "Reference longitude for all the input files: $REF_LONGITUDE"
+else 
+    echo "Reference longitude given is not a number!"
+	exit 1
+fi
 
 if [ "$DEBUG" = "1" ]; then
 	echo "Debug mode is on"
@@ -60,9 +83,9 @@ else
 	
 	for X in ${FILES}; do
 		if [ "$DEBUG" = "1" ]; then
-			python2 ODGenerator.py  -f ${DIR}${X} -n ${NUM} -d
+			python2 ODGenerator.py  -f ${DIR}${X} -n ${NUM} -d -la ${REF_LATITUDE} -lo ${REF_LONGITUDE}
 		else
-			python2 ODGenerator.py  -f ${DIR}${X} -n ${NUM}
+			python2 ODGenerator.py  -f ${DIR}${X} -n ${NUM} -la ${REF_LATITUDE} -lo ${REF_LONGITUDE}
 		fi
 	done
 fi
