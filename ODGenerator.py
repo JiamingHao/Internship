@@ -1,21 +1,24 @@
 import argparse
 import sys
 import math
-#from enum import Enum
 import os
 import io
 import dis
 import random
-import datetime
 import gc
+
+
 global dirPath
 dirPath = "./ODPairs/"
 global EARTH_RADIUS
 EARTH_RADIUS = 6378.137
-global noPartition
-noPartition = 0
-global noPartition_Dis
-noPartition_Dis = 0
+global Dis_sort_size
+Dis_sort_size = 0
+global ID_sort_size
+ID_sort_size = 0
+global totalLines
+totalLines = 0
+
 def rad(d):
     '''Convert degree to radian
     
@@ -118,9 +121,74 @@ def mkdir(path):
         print "|        --- Create folder", path, "...---                  |"
         print "|        ---OK ---                                            |"
     else:
-        print "|        Folder ", '"', path ,'"', " already exists", "              |"
+        print "|        Folder ", '"', path , '"', " already exists", "              |"
 
-def processAndStore(filePath, entries):
+
+def update_progress(progress):
+    
+    ''' Display or updates a console loading bar. Accept a float between 0 and 1.
+        Any int will be converted to a float. A value under 0 represents a 'halt' 
+        A value at 1 or bigger represents 100% 
+    
+        Parameters
+        ----------------------------------------
+        The value indicating the current progress
+        ----------------------------------------
+       
+    '''
+    
+    barLength = 10  # Modify this to change the length of the progress bar
+    status = ""
+    if isinstance(progress, int):
+        progress = float(progress)
+    if not isinstance(progress, float):
+        progress = 0
+        status = "error: progress var must be float\r\n"
+    if progress < 0:
+        progress = 0
+        status = "Halt...\r\n"
+    if progress >= 1:
+        progress = 1
+        status = "Done...\r\n"
+    block = int(round(barLength * progress))
+    text = "\r|    Percent: [{0}] {1}% {2}".format("#"*block + "-"*(barLength - block), int(progress * 100), status)
+    
+    sys.stdout.write(text)
+    sys.stdout.flush()
+
+def bufcount(filename):
+    ''' Given a file, figure out its total number of lines'''
+    
+    f = open(filename)                  
+    lines = 0
+    buf_size = 1024 * 1024
+    read_f = f.read  # loop optimization
+
+    buf = read_f(buf_size)
+    while buf:
+        lines += buf.count('\n')
+        buf = read_f(buf_size)
+
+    f.close()
+    return lines
+
+def sanityCheck(entry):
+    # legal format for an entry requires 10 slots of info, even the slot is 
+    # is empty itself, there should be an "" to indicate the position 
+    if len(entry.split(",")) <= 9:
+        return -1
+        
+    div = entry.split(",")
+    # call modify function before return to remove the "|" in some entries
+    result = modify(mytrim(div[len(div) - 1]))
+    # for those entries lacking category id info or having illegal category id
+    if cmp(result, "") == 0 or not isNumber(result):
+        return -1
+    
+    return 0
+
+def processAndStore(filePath, entries, illegalList):
+    
     '''Open the file according to the given file path, read each entry, 
     calculate its sphere distance against the reference point. 
     Store its result at the end of the line
@@ -133,25 +201,37 @@ def processAndStore(filePath, entries):
     -----------------
     
     '''
+    try:
+        fp = io.open(filePath, mode="r", encoding="utf-8")
+    except IOError:
+        print "|    Error: Fail to read from file"
+        print "==============================================================="
+        sys.exit(1)
     
-    fp = io.open(filePath, mode="r", encoding="utf-8")
-    starttime = datetime.datetime.now()
+    # Get the total number of lines in advance to calculate the progress
+    lineNo = bufcount(filePath)    
+    count = 1
+    print "|    Begin to process and store file: "
     for line in fp:
         # ignore those entries with irregular formats or too little information
-        if(len(line.split(",")) <= 4):
+        update_progress(count / float(lineNo))
+        count = count + 1
+        
+        # store those problematic lines for later use
+        if sanityCheck(line) == -1:
+            illegalList.append(mytrim(line))
             continue
-    
+        
+        # calculate the sphere distance between current point and given reference point
         dis = getDistance(args.latitude, args.longitude, extractLatitudes(line), extractLongitude(line))
         # remove leading and trailing white spaces
         line = mytrim(line)
-        # All floats or non String types must be casted to Strings before concatenation
+        # In Python, all floats or non String types must be casted to Strings before concatenation
         line = line[:] + "," + str(dis)
         
         entries.append(mytrim(line))
+        
     fp.close()
-    endtime = datetime.datetime.now()
-    print "|        Reading and store input file finished", "               |"
-    print "|        Time used to process and store: " + str((endtime - starttime).seconds)+ "s","                  |"
     
 def extractLatitudes(line):
     '''Extract latitude from the given String
@@ -234,11 +314,12 @@ def debug_Output(entries, filepath):
         writer = io.open(filepath, "w", encoding="utf-8")
         for i in range(len(entries)):
                 line = entries[i][:] + "\n"
-                writer.write(line)
+                writer.write(unicode(line))
         writer.close()
     else:
         print "|        Debug mode off, thus no debug_output produced        |"
         print "|                                                             |"
+
 def extract_filename(filepath):
     '''Extract the filename from the given filepath. 
     The default is that all files has csv extension
@@ -289,15 +370,14 @@ def generateRandomPairs(entries):
     '''
     list_of_tuples = []
     
-    if not args.notInXML:
-        fname = extract_filename(args.filePath) + "RandomPairs.xml"
-    else:
-        fname = extract_filename(args.filePath) + "RandomPairs.dat"
-    
+    fname = extract_filename(args.filePath) + "RandomPairs.xml"
     writer = io.open(dirPath + fname, "w", encoding="utf-8")
     
-    if not args.notInXML:
-        writeHeading(writer)
+    if args.debug:
+        fname_debug = extract_filename(args.filePath) + "RandomPairs.dat"
+        writer_debug = io.open(dirPath + fname_debug, "w", encoding="utf-8")
+    
+    writeHeading(writer)
     
     for i in range(0, args.numberOfPairs):
         no = i + 1
@@ -313,19 +393,26 @@ def generateRandomPairs(entries):
             
         list_of_tuples.append(ODPair)
         
-        if not args.notInXML:
-            writeOneODPair(writer, startNo, endNo, no)
-        else:
+        writeOneODPair(writer, startNo, endNo, no)
+        
+        if args.debug:
             content = entries[startNo] + " -----> " + entries[endNo] + "\n"
-            writer.write(content)
+            writer_debug.write(content)
     
-    if not args.notInXML:   
-        writeEnding(writer)
+    
+    writeEnding(writer)
         
         
-    print "|        produce " + fname + "                     |"
+    print "|        produce " + fname + "                      "
+    
+    if args.debug:
+        print "|        Debug Mode On:                               "
+        print "|            produce " + fname_debug
+       
     writer.close()
-
+    if args.debug:
+        writer_debug.close()
+    
 def sort(entries, pattern):
     '''Invoke Quick Sort algorithm on the given data according to
        the Pattern provided
@@ -335,103 +422,23 @@ def sort(entries, pattern):
        entries: List
            The list stores all the contents from the input file by lines
        
-       pattern: Enum 
+       pattern: 
             CATEGORYID: sort by the category id in ascending order
             DISTANCE: sort by the distance in ascending order
     '''
-    #if pattern == SortPattern['ZIPCODE']:
-    if cmp(pattern, "CATEGORYID") == 0:
-        print ""
-        print "|    Sort by category id                                      |"
-        starttime = datetime.datetime.now()
-        sortHelper_Zip(entries, 0, len(entries) - 1)
-        # sortHelper_Zip_MergeSort(entries, 0, len(entries)-1)
-        endtime = datetime.datetime.now()
-        print "|    Sort ends                                                |" 
-        print "|    time used: " + str((endtime - starttime).seconds) +"s                                            |"
-        print "|                                                             |"
-    #elif pattern == SortPattern['DISTANCE']:
-    elif cmp(pattern,"DISTANCE") == 0:
-        print ""
-        print "|    Sort by distance                                         |"
-        starttime = datetime.datetime.now()
-        sortHelper_Dis(entries, 0, len(entries) - 1)
-        endtime = datetime.datetime.now()
-        print "|    Sort ends                                                |" 
-        print "|    time used: " + str((endtime - starttime).seconds) +"s                                            |"
-        print "|                                                             |"
-        
-        
-def sortHelper_Zip_MergeSort(vals, i, k):
-    '''Merge Sort algorithm as another option, current not used
-    
-       Parameters
-       -----------------
-       vals: List
-            The data needed to be sort
-       i: int
-           Start index of the data
-       k: int 
-           End index of the data( inclusive)
-       -----------------
-       
-    '''
-    length = k - i + 1
-    if length > 5:
-        j = (i + k) / 2
-        sortHelper_Zip_MergeSort(vals, i, j)
-        sortHelper_Zip_MergeSort(vals, j + 1, k)
-    else:
-        insertionSortByZip(vals, i, k)
-        return
-    merge(vals, i, j, k)
 
-def merge(vals, i, j, k):
-    '''Merge two sorted parts back into the original List
-    
-       Parameters
-       -----------------
-       i: int
-           Start index of the left merge part
-       j: int
-           The delimiter of right part and left part
-       k: int
-           The end index of the right part
-       -----------------
-    '''
-    mergedSize = k - i + 1
-    mergedData = []
-    mergePos = 0
-    leftPos = i
-    rightPos = j + 1
-    
-    while leftPos <= j and rightPos <= k:
-        if extractZipCode(vals[leftPos]) <= extractZipCode(vals[rightPos]):
-            mergedData.append(vals[leftPos])
-            leftPos = leftPos + 1
-        else:
-            mergedData.append(vals[rightPos])
-            rightPos = rightPos + 1
-        
-        mergePos = mergePos + 1
-        
-    while leftPos <= j:
-        mergedData.append(vals[leftPos])
-        leftPos = leftPos + 1
-        mergePos = mergePos + 1
-    
-    
-    while rightPos <= k:
-        mergedData.append(vals[rightPos])
-        rightPos = rightPos + 1
-        mergePos = mergePos + 1
-        
-    for a in range(0 , mergedSize):
-        vals[i + a] = mergedData[a]
-     
-        
-        
-def sortHelper_Zip(vals, i, k):
+    if cmp(pattern, "CATEGORYID") == 0:
+        print "|"
+        print "|    Sort by category id                                      |"
+        sortHelper_ID(entries, 0, len(entries) - 1)
+        print "|                                                             |" 
+    elif cmp(pattern, "DISTANCE") == 0:
+        print "|"
+        print "|    Sort by distance                                         |"
+        sortHelper_Dis(entries, 0, len(entries) - 1)
+        print "|                                                             |" 
+
+def sortHelper_ID(vals, i, k):
     ''' Helper function called by sort function
         called by pattern ZIPCODE
         
@@ -447,12 +454,16 @@ def sortHelper_Zip(vals, i, k):
     fixedSize = 110
     
     if k - i + 1 <= fixedSize:
-        insertionSortByZip(vals, i, k)
+        insertionSortByCategoryID(vals, i, k)
+        
+        global ID_sort_size
+        ID_sort_size = ID_sort_size + (k - i + 1)
+        update_progress(ID_sort_size / float(len(vals)))
         return 
     
-    j = partitionByZip(vals, i, k)
-    sortHelper_Zip(vals, i, j)
-    sortHelper_Zip(vals, j + 1, k)
+    j = partitionByCategoryID(vals, i, k)
+    sortHelper_ID(vals, i, j)
+    sortHelper_ID(vals, j + 1, k)
     return 
 
 def sortHelper_Dis(vals, i, k):
@@ -469,6 +480,10 @@ def sortHelper_Dis(vals, i, k):
     
     if k - i + 1 <= fixedSize:
         insertionSortByDistance(vals, i, k)
+        
+        global Dis_sort_size
+        Dis_sort_size = Dis_sort_size + (k - i + 1)
+        update_progress(Dis_sort_size / float(len(vals)))
         return
     
     j = partitionByDis(vals, i, k)
@@ -476,7 +491,7 @@ def sortHelper_Dis(vals, i, k):
     sortHelper_Dis(vals, j + 1, k)
     return 
 
-def partitionByZip(vals, i, k):
+def partitionByCategoryID(vals, i, k):
     '''Partition the given data through comparing with the pivot produced by getMedium
     
         Parameters:
@@ -485,20 +500,16 @@ def partitionByZip(vals, i, k):
         -----------------
         
     '''
-    
-    global noPartition
-    noPartition += 1
-    
     temp = ""
     done = False
-    pivot = extractZipCode(vals[getMedium_Zip(vals, i, k)])
+    pivot = extractCategoryID(vals[getMedium_Zip(vals, i, k)])
     l = i
     h = k
     
     while not done:
-        while extractZipCode(vals[l]) < pivot:
+        while extractCategoryID(vals[l]) < pivot:
             l = l + 1
-        while pivot < extractZipCode(vals[h]):
+        while pivot < extractCategoryID(vals[h]):
             h = h - 1
         if l >= h:
             done = True
@@ -521,8 +532,6 @@ def partitionByDis(vals, i , k):
         -----------------
         
     '''
-    global noPartition_Dis
-    noPartition_Dis += 1
     temp = ""
     done = False
     pivot = extractDis(vals[getMedium_Dis(vals, i, k)])
@@ -560,10 +569,11 @@ def getMedium_Zip(vals, i, k):
             The ending index of the interval where we pick the pivot
         -----------------
         
-        '''
-    medium = extractZipCode(vals[i + (k - i) / 2])
-    head = extractZipCode(vals[i])
-    tail = extractZipCode(vals[k])
+    '''
+    
+    medium = extractCategoryID(vals[i + (k - i) / 2])
+    head = extractCategoryID(vals[i])
+    tail = extractCategoryID(vals[k])
     
     temp = 0
     if head > medium:
@@ -581,9 +591,9 @@ def getMedium_Zip(vals, i, k):
         medium = tail
         tail = temp
     
-    if medium == extractZipCode(vals[i + (k - i) / 2]):
+    if medium == extractCategoryID(vals[i + (k - i) / 2]):
         return i + (k - i) / 2
-    elif medium == extractZipCode(vals[i]):
+    elif medium == extractCategoryID(vals[i]):
         return i
     else:
         return k 
@@ -599,6 +609,7 @@ def getMedium_Dis(vals, i, k):
         -----------------
         
     '''
+    
     medium = extractDis(vals[i + (k - i) / 2])
     head = extractDis(vals[i])
     tail = extractDis(vals[k])
@@ -627,7 +638,7 @@ def getMedium_Dis(vals, i, k):
         return k 
     return i 
 
-def insertionSortByZip(vals, i, k):
+def insertionSortByCategoryID(vals, i, k):
     '''insertion sort is used to sort very small fragment of the data
     
         Parameters
@@ -636,11 +647,12 @@ def insertionSortByZip(vals, i, k):
         -----------------
     
     '''
+    
     head = i
     temp = ""
     for a in range(head + 1, k + 1):
         sc = a
-        while sc > head and extractZipCode(vals[sc]) < extractZipCode(vals[sc - 1]):
+        while sc > head and extractCategoryID(vals[sc]) < extractCategoryID(vals[sc - 1]):
             temp = vals[sc]
             vals[sc] = vals[sc - 1]
             vals[sc - 1] = temp
@@ -655,6 +667,7 @@ def insertionSortByDistance(vals, i, k):
         -----------------
         
     '''
+    
     head = i
     temp = ""
     for a in range(head + 1, k + 1):
@@ -666,14 +679,17 @@ def insertionSortByDistance(vals, i, k):
             sc = sc - 1
 
 
-def extractZipCode(line):
-    div = line.split(",")
-    # for those entries lacking zip code info or having illegal zip code
-    result = modify(mytrim(div[len(div) - 2]))
+def extractCategoryID(line):
+    '''Extract the category id from the given line
     
+    '''
+    
+    div = line.split(",")
+    # call modify function before return to remove the "|" in some entries
+    result = modify(mytrim(div[len(div) - 2]))
+    # for those entries lacking category id info or having illegal category id
     if cmp(result, "") == 0 or not isNumber(result):
         return -1
-    # call modify function before return to remove the "|" in some entries
     return int(result)
 
 def closeCategoryID(entries):
@@ -688,15 +704,19 @@ def closeCategoryID(entries):
     # Using a list to store every OD Pair as a tuple
     list_of_tuples = []
     
-    if not args.notInXML:
-        fname = extract_filename(args.filePath) + "CloseCategoryID.xml"
-    else:
-        fname = extract_filename(args.filePath) + "CloseCategoryID.dat"
+    
+    fname = extract_filename(args.filePath) + "CloseCategoryID.xml"
+    
     
     writer = io.open(dirPath + fname, "w", encoding="utf-8")
+    
+    if args.debug:
+        fname_debug = extract_filename(args.filePath) + "CloseCategoryID.dat"
+        writer_debug = io.open(dirPath + fname_debug, "w", encoding="utf-8")
+    
     # add the format heading
-    if not args.notInXML:
-        writeHeading(writer)
+
+    writeHeading(writer)
     
     for i in range(0, args.numberOfPairs):
         no = i + 1
@@ -705,30 +725,39 @@ def closeCategoryID(entries):
         endNo = random.randint(startNo, startNo + 100)
         
         # store the index of O and D in a tuple
-        ODPair = (startNo,endNo)
+        ODPair = (startNo, endNo)
         
         # if this pair of OD has already been generated before
         while ODPair in list_of_tuples:
             startNo = random.randint(0, len(entries) - 1 - 100)
             endNo = random.randint(startNo, startNo + 100)
-            ODPair = (startNo,endNo)
+            ODPair = (startNo, endNo)
         
         list_of_tuples.append(ODPair)
         
-        if not args.notInXML:
-            writeOneODPair(writer, startNo, endNo, no)
-        else:
+        writeOneODPair(writer, startNo, endNo, no)
+        
+        if args.debug:
             content = entries[startNo] + " -----> " + entries[endNo] + "\n"
-            writer.write(content)
-    
-    if not args.notInXML:    
-        writeEnding(writer)
+            writer_debug.write(content)
+            
+       
+       
+    writeEnding(writer)
         
        
-    print "|        produce " + fname + "                 |"
-
-    writer.close()   
-
+    print "|        produce " + fname + "                  "
+    
+    if args.debug:
+        print "|        Debug Mode On:                               "
+        print "|            produce " + fname_debug
+        print "|"
+        
+    writer.close()
+      
+    if args.debug: 
+        writer_debug.close()
+    
 def distinctCategoryID(entries):
     '''Produce an OD pair that the start point and end point have max difference
         
@@ -738,17 +767,17 @@ def distinctCategoryID(entries):
         -----------------
         
     '''
+    
     list_of_tuples = []
     
-    if not args.notInXML:
-        fname = extract_filename(args.filePath) + "DistinctCategoryID.xml"
-    else:
-        fname = extract_filename(args.filePath) + "DistinctCategoryID.dat"
-    
+    fname = extract_filename(args.filePath) + "DistinctCategoryID.xml"
     writer = io.open(dirPath + fname, "w", encoding="utf-8")
-   
-    if not args.notInXML: 
-        writeHeading(writer)
+    
+    if args.debug:
+        fname_debug = extract_filename(args.filePath) + "DistinctCategoryID.dat"
+        writer_debug = io.open(dirPath + fname_debug, "w", encoding="utf-8")
+
+    writeHeading(writer)
     
     
     for i in range(0, args.numberOfPairs):
@@ -757,28 +786,34 @@ def distinctCategoryID(entries):
         endNo = random.randint(len(entries) - 1 - 200, len(entries) - 1)
         
         # store the index of O and D in a tuple
-        ODPair = (startNo,endNo)
+        ODPair = (startNo, endNo)
         
         while ODPair in list_of_tuples:
             startNo = random.randint(0, 200)
             endNo = random.randint(len(entries) - 1 - 200, len(entries) - 1)
-            ODPair = (startNo,endNo)
+            ODPair = (startNo, endNo)
         
         list_of_tuples.append(ODPair)
         
-        if not args.notInXML:
-            writeOneODPair(writer, startNo, endNo, no)
-        else:
+        writeOneODPair(writer, startNo, endNo, no)
+        
+        if args.debug:
             content = entries[startNo] + " -----> " + entries[endNo] + "\n"
-            writer.write(content)
+            writer_debug.write(content)
+            
+    writeEnding(writer)  
     
-    if not args.notInXML:
-        writeEnding(writer)  
+    print "|        produce " + fname + "               " 
     
-    print "|        produce " + fname + "              |" 
+    if args.debug:
+        print "|        Debug Mode On:                               "
+        print "|            produce " + fname_debug
+        print "|"
         
     writer.close()
-
+    if args.debug:
+        writer_debug.close()
+    
 def smallDisFromRef(entries):
     '''After sorting by distance from reference point, equally divide the whole data into three parts
     we think all the data in the first part has relatively small sphere distance.
@@ -789,44 +824,51 @@ def smallDisFromRef(entries):
         -----------------
         
     '''
+    
     interval = len(entries) / 3
     list_of_tuples = []
     
-    if not args.notInXML:
-        fname = extract_filename(args.filePath) + "SmallDisFromRef.xml"
-    else:
-        fname = extract_filename(args.filePath) + "SmallDisFromRef.dat"
-    
+    fname = extract_filename(args.filePath) + "SmallDisFromRef.xml"
     writer = io.open(dirPath + fname, "w", encoding="utf-8")
     
-    if not args.notInXML:
-        writeHeading(writer)
+    if args.debug:
+        fname_debug = extract_filename(args.filePath) + "SmallDisFromRef.dat"
+        writer_debug = io.open(dirPath + fname_debug, "w", encoding="utf-8")
+        
+    writeHeading(writer)
     
     for i in range(0, args.numberOfPairs):
         no = i + 1
         startNo = random.randint(0, interval)
         endNo = random.randint(0, interval)
-        ODPair = (startNo,endNo)
+        ODPair = (startNo, endNo)
         
         while ODPair in list_of_tuples:
             startNo = random.randint(0, interval)
             endNo = random.randint(0, interval)
-            ODPair = (startNo,endNo)
+            ODPair = (startNo, endNo)
             
         list_of_tuples.append(ODPair)
         
-        if not args.notInXML:
-            writeOneODPair(writer, startNo, endNo, no)
-        else:
-            content = entries[startNo] + " -----> " + entries[endNo] + "\n"
-            writer.write(content)
+        writeOneODPair(writer, startNo, endNo, no)
         
-    if not args.notInXML:
-        writeEnding(writer)
+        if args.debug:
+            content = entries[startNo] + " -----> " + entries[endNo] + "\n"
+            writer_debug.write(content)
+       
+    writeEnding(writer)
     
-    print "|        produce " + fname + "                 |"
+    print "|        produce " + fname + "                  "
+    
+    if args.debug:
+        print "|        Debug Mode On:                               "
+        print "|            produce " + fname_debug
+        print "|"
+        
+    
     writer.close()
-    
+    if args.debug:
+        writer_debug.close()
 
 def middleDisFromRef(entries):
     '''Same as smallDisFromRef function, randomly pick out OD pairs from the second part from 
@@ -838,26 +880,26 @@ def middleDisFromRef(entries):
         -----------------
         
     '''
+    
     interval = len(entries) / 3
     list_of_tuples = []
     
+    fname = extract_filename(args.filePath) + "MiddleDisFromRef.xml"
     
-    if not args.notInXML:
-        fname = extract_filename(args.filePath) + "MiddleDisFromRef.xml"
-    else:
-        fname = extract_filename(args.filePath) + "MiddleDisFromRef.dat"
-        
     writer = io.open(dirPath + fname, "w", encoding="utf-8")
     
-    if not args.notInXML:
-        writeHeading(writer)
+    if args.debug:
+        fname_debug = extract_filename(args.filePath) + "MiddleDisFromRef.dat"
+        writer_debug = io.open(dirPath + fname_debug, "w", encoding="utf-8")
+        
+    writeHeading(writer)
     
     
     for i in range(0, args.numberOfPairs):
         no = i + 1
         startNo = random.randint(interval, 2 * interval)
         endNo = random.randint(interval, 2 * interval)
-        ODPair = (startNo,endNo)
+        ODPair = (startNo, endNo)
         
         while ODPair in list_of_tuples:
             startNo = random.randint(interval, 2 * interval)
@@ -866,18 +908,24 @@ def middleDisFromRef(entries):
         
         list_of_tuples.append(ODPair)
         
-        if not args.notInXML:
-            writeOneODPair(writer, startNo, endNo, no)
-        else:
+        writeOneODPair(writer, startNo, endNo, no)
+        if args.debug:
             content = entries[startNo] + " -----> " + entries[endNo] + "\n"
-            writer.write(content)
+            writer_debug.write(content)
+       
+    writeEnding(writer)
     
-    if not args.notInXML:    
-        writeEnding(writer)
+    print "|        produce " + fname + "                 "
     
-    print "|        produce " + fname + "                |"
+    if args.debug:
+        print "|        Debug Mode On:                               "
+        print "|            produce " + fname_debug
+        print "|"
+        
     writer.close()
-
+    if args.debug:
+        writer_debug.close()
+    
 def largeDisFromRef(entries):
     '''Same as smallDisFromRef function, randomly pick out OD pairs from the third part from 
     the given data after sorting by distance from the reference point
@@ -888,48 +936,57 @@ def largeDisFromRef(entries):
         -----------------
         
     '''
+    
     interval = len(entries) / 3
     list_of_tuples = []
     
-    if not args.notInXML:
-        fname = extract_filename(args.filePath) + "LargeDisFromRef.xml"
-    else:
-        fname = extract_filename(args.filePath) + "LargeDisFromRef.dat"
-    
+    fname = extract_filename(args.filePath) + "LargeDisFromRef.xml"
+        
     writer = io.open(dirPath + fname, "w", encoding="utf-8")
     
-    if not args.notInXML:
-        writeHeading(writer)
+    if args.debug:
+        fname_debug = extract_filename(args.filePath) + "LargeDisFromRef.dat"
+        writer_debug = io.open(dirPath + fname_debug, "w", encoding="utf-8")
+    
+    writeHeading(writer)
     
     for i in range(0, args.numberOfPairs):
         no = i + 1
         startNo = random.randint(interval * 2, len(entries) - 1)
         endNo = random.randint(interval * 2, len(entries) - 1)
-        ODPair = (startNo,endNo)
+        ODPair = (startNo, endNo)
         
         while ODPair in list_of_tuples:
             startNo = random.randint(interval * 2, len(entries) - 1)
             endNo = random.randint(interval * 2, len(entries) - 1)
-            ODPair = (startNo,endNo)
+            ODPair = (startNo, endNo)
                 
         list_of_tuples.append(ODPair)
+        writeOneODPair(writer, startNo, endNo, no)
         
-        if not args.notInXML:
-            writeOneODPair(writer, startNo, endNo, no)
-        else:
+        if args.debug:
             content = entries[startNo] + " -----> " + entries[endNo] + "\n"
-            writer.write(content)
+            writer_debug.write(content)
     
-    if not args.notInXML:
-        writeEnding(writer)
+    writeEnding(writer)
         
       
-    print "|        produce " + fname + "                 |"
+    print "|        produce " + fname + "                  "
+    
+    if args.debug:
+        print "|        Debug Mode On:                               "
+        print "|            produce " + fname_debug
+    
     writer.close()
+    if args.debug:
+        writer_debug.close()
     
 def writeHeading(writer):
-    heading ='''<?xml version='1.0' encoding='UTF-8'?>
-<testSuite description="" env="" javaClass="TestRouting" name="Test" keywords="BAT">
+    '''Writting the beginning tag to the xml format output files'''
+    
+    heading = '''<?xml version='1.0' encoding='UTF-8'?>
+<testSuite description="" env="win32_data_path=D:\denali_18Q1\;UseHistoricalSpeed=false;open_route_log=false;win32_config_path=D:\RoutingRegx\BackendConfig\denali\cn\;
+win32_data_config_path=D:\denali_18Q1\\tiles\\access_config.json;" javaClass="TestRouting" name="routing">
   <input>
     <inputSet name="Test">\n'''
     
@@ -945,7 +1002,7 @@ def writeOneODPair(writer, startNo, endNo, no):
         no: the case number
         
     '''
-    nameTag = '''      <testCase description="" name="Case_'''+ str(no) + "\"" + ">\n"
+    nameTag = '''      <testCase description="" name="Case_''' + str(no) + "\"" + ">\n"
     writer.write(unicode(nameTag))
         
     OrignlocationTag = '''        <param name="Orig" type="java.lang.String" value="''' + "OLL=" + \
@@ -953,7 +1010,7 @@ def writeOneODPair(writer, startNo, endNo, no):
         "\"" + " />\n"
     writer.write(unicode(OrignlocationTag))
         
-    DeslocationTag =  '''        <param name="Dest" type="java.lang.String" value="''' + "DLL="  + \
+    DeslocationTag = '''        <param name="Dest" type="java.lang.String" value="''' + "DLL=" + \
         str(extractLatitudes(entries[endNo])) + "," + str(extractLongitude(entries[endNo])) + \
         "\"" + " />\n"
     writer.write(unicode(DeslocationTag))
@@ -965,14 +1022,14 @@ def writeOneODPair(writer, startNo, endNo, no):
     writer.write(unicode(endTag))
     
 def writeEnding(writer):
-    # Add ending tag and other information as required 
+    # Add ending tag and other information as required to the output xml file
         blockEndTag = '''    </inputSet>
   </input>\n'''
         writer.write(unicode(blockEndTag))
     
-        reference='''  <ref fileName="../services.xml" />
+        reference = '''  <ref fileName="../services.xml" />
     <services>
-      <service description="sample test service" inputSet="RoadType" methodName="basicRouteTest" name="CN_Case" commonExpectations="routeSame">
+      <service description="sample test service" inputSet="Test" methodName="basicRouteTest" name="CN_Case" commonExpectations="routeSame">
         <rule name="status_comp_rule" parent="status_comp_rule" />
         <rule name="route_comp_rule" parent="route_comp_rule" />
         <rule name="edge_comp_rule" parent="edge_comp_rule" />
@@ -983,9 +1040,19 @@ def writeEnding(writer):
 </testSuite>\n'''
     
         writer.write(unicode(reference))
-        
+
+def showIllegalContents(illegalList):
+    '''Show the number of illegal lines. Produce the illegal lines collection
+       under debug mode'''
+    
+    print "|     ProblematicLines: " + str(len(illegalList))
+    print "|"
+    fname = extract_filename(args.filePath) + "problematicLines.dat"
+    filePath = dirPath + fname
+    debug_Output(illegalList, filePath)
+             
 '''I was going to use enum at the very beginning. However, it seems that not all Python2.7 has enum module...'''
-#SortPattern = Enum('SortPattern', 'DISTANCE ZIPCODE')
+# SortPattern = Enum('SortPattern', 'DISTANCE ZIPCODE')
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
@@ -994,7 +1061,7 @@ if __name__ == '__main__':
     parser.add_argument("-la", "--latitude", type=float, help="specify the latitude for reference")
     parser.add_argument("-lo", "--longitude", type=float, help="specify the longitude for reference")
     parser.add_argument("-d", "--debug", help="debug mode", action="store_true")
-    parser.add_argument("-nXML", "--notInXML", help="do not generate OD pairs in XML format", action="store_true")
+    
     args = parser.parse_args()
 
 
@@ -1020,46 +1087,51 @@ if __name__ == '__main__':
         args.longitude = 0.0
 
     print "|    Processing command line argument over:                   |"
-    print "|        Reference latitude: ", args.latitude, "  Reference longitude: ", args.longitude,""
+    print "|        Reference latitude: ", args.latitude, "  Reference longitude: ", args.longitude, ""
 
     if args.filePath:
-        print "|        File path provided: ", '"', args.filePath, '"',"             "
+        print "|        File path provided: ", '"', args.filePath, '"', "             "
     else:
         print "|        Using default file path"
         args.filePath = "./Shanghai3.csv"
 
     if args.debug:
-        print "|        Debug Mode On","                                       |"
+        print "|        Debug Mode On", "                                       |"
     else:
-        print "|        Debug Mode Off","                                      |"
+        print "|        Debug Mode Off", "                                      |"
 
-    if args.notInXML:
-        print '''|        -nXML flag has been detected,                        |
-            thus  Produced Files Will Not Be In XML Format    |'''
     
     print "|-------------------------------------------------------------|"
     print "|    Start processing the data......", "                         |"
     mkdir(dirPath)
     entries = []
-    processAndStore(args.filePath, entries)
-    print "|    Total number of lines: ", len(entries), "                           |"
+    illegalList = []
+    processAndStore(args.filePath, entries, illegalList)
+    print "|    Total number of lines: ", len(entries), "                           "
     print"|                                                             |"
+    
+   
+    totalLines = len(entries)
+    
     debug_Output(entries, dirPath + extract_filename(args.filePath) + "Debug.dat")
     generateRandomPairs(entries)
 
-    #sort(entries, SortPattern['DISTANCE'])
-    sort(entries,"DISTANCE")
-    # print "Number of partition called: ", noPartition_Dis
+  
+    sort(entries, "DISTANCE")
     
-    debug_Output(entries, dirPath + extract_filename(args.filePath) + "SortedByDistanceDebug.dat")
+    
+    debug_Output(entries, dirPath + extract_filename(args.filePath) + "SortedByDistance.dat")
     smallDisFromRef(entries)
     middleDisFromRef(entries)
     largeDisFromRef(entries)
-    #sort(entries, SortPattern['ZIPCODE'])
-    sort(entries,"CATEGORYID")
+ 
+    sort(entries, "CATEGORYID")
   
-    debug_Output(entries, dirPath + extract_filename(args.filePath) + "SortedByZipDebug.dat")
+    debug_Output(entries, dirPath + extract_filename(args.filePath) + "SortedByCategoryID.dat")
     closeCategoryID(entries)
     distinctCategoryID(entries)
+    
+    showIllegalContents(illegalList)
     gc.collect()
+    print "|     ALL FINISH!                                             |"
     print "==============================================================="
