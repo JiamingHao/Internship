@@ -20,7 +20,7 @@ from that. Just invoke the python program by itself, the syntax is:
 			default latitude: 0.0
 			default longitude:0.0
 
- 			[-d]: when the -d flag is turned on the program will run in debug mode. It will generate debug 
+ 			[-d]: when the -d flag is turned on, the program will run in debug mode. It will generate debug 
 			files after each sorting operation.(see below for details)
 
 Altogether there are six methods to generate OD pairs, each of them will produce a single output 
