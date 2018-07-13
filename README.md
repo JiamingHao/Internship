@@ -1,8 +1,8 @@
-	There are two small programs.  The program written in 
- python2.7 is the main OD pairs generator. The one named generator_driver is a 
- bash shell script.
- 
-    For the purpose of giving one particular csv file and generate OD pairs 
+There are two small programs.  The program written in 
+python2.7 is the main OD pairs generator. The one named generator_driver is a 
+bash shell script.
+
+For the purpose of giving one particular csv file and generate OD pairs 
 from that. Just invoke the python program by itself, the syntax is:
  				
 				python2 ODGenerator.py [-f filePath] [-n numOfPairs] [-la latitude] [-lo longitude] [-d]
@@ -33,7 +33,7 @@ once in one file.
 			closeCategoryID: sort all the entries by their category id, and then produce OD pairs having 
                               very close category id, usually this will produce OD pairs with the same category id.
 
-			distinctCategoryID: sort all the entries by their zip code, produce OD pairs having most distinct category id
+			distinctCategoryID: sort all the entries by their category id, produce OD pairs having most distinct category id
 
 			smallDisFromRef: sort all the entries by their distance from given reference point or from default(latitude: 0.0 longitude: 0.0)
                               then produce OD pairs having comparatively small sphere distance from the reference point.
