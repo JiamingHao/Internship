@@ -24,20 +24,20 @@ file with the name in the format of [inputFileName][methodName].dat. All the met
 no duplicate OD pairs (pairs with the same starting and ending points) will be generated more than 
 once in one file.
 
- 		    generateRandomPairs: just randomly generate OD pairs
+			generateRandomPairs: just randomly generate OD pairs
 
- 	  		minZipCodeDifference: sort all the entries by their zip code, and then produce OD pairs having 
+			minZipCodeDifference: sort all the entries by their zip code, and then produce OD pairs having 
                               very close zip code, usually this will produce OD pairs with the same zip code.
 
-            largeZipCodeDifference: sort all the entries by their zip code, produce OD pairs having largest zip
+			largeZipCodeDifference: sort all the entries by their zip code, produce OD pairs having largest zip
                               code differnece
 
-            smallDisFromRef: sort all the entries by their distance from given reference point or from default(latitude: 0.0 longitude: 0.0)
+			smallDisFromRef: sort all the entries by their distance from given reference point or from default(latitude: 0.0 longitude: 0.0)
                               then produce OD pairs having comparatively small sphere distance from the reference point.
-           
+
             middleDisFromRef: same as the previous except producing OD pairs having comparatively medium sphere distance from the point.
 
- 			largeDisFromRef: same as the previous except producing OD pairs having comparatively large sphere distance from the point.
+			largeDisFromRef: same as the previous except producing OD pairs having comparatively large sphere distance from the point.
 
 	The bash script is used for the situation when users want to batch process a large number of input files. Since it is written in 
 bash, it can only be run in OS with bash shell. To run the script, make sure that you give the script execution permission,
